@@ -14,7 +14,7 @@ The starter repository is a bare bones template that you will need to update wit
 * [test-lab.c](https://boisestatecanvas.instructure.com/courses/38319/files/18513442?wrap=1)
 * [main.c](https://boisestatecanvas.instructure.com/courses/38319/files/18571897?wrap=1)
 
-The testing code in test-lab.c is **NOT** comprehensive. So if you pass all the tests it does not mean your shell is 100% correct. You will need to add additional tests to get better coverage.
+The testing code in `test-lab.c` is **NOT** comprehensive. So if you pass all the tests it does not mean your shell is 100% correct. You will need to add additional tests to get better coverage.
 
 #### Task 2 - Print Version
 Let’s start off simple and just have our shell print off its version. When the shell is started with a command line argument `-v`, it prints out the version of the project and then quits, you will need to leverage the header file `lab.h` for the major and minor version. Parse the command line arguments with [getop](https://www.gnu.org/software/libc/manual/html_node/Example-of-Getopt.html). The program should exit after printing the version.
