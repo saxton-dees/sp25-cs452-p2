@@ -14,8 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: install-deps
-    run: sudo apt-get install libreadline-dev -y
+      run: sudo apt-get install libreadline-dev -y
     - name: make
-    run: make
+      run: make
     - name: make check
-    run: make check
+      run: make check

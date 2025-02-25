@@ -115,7 +115,7 @@ void test_trim_white_mostly_whitespace(void)
 void test_get_prompt_default(void)
 {
      char *prompt = get_prompt("MY_PROMPT");
-     TEST_ASSERT_EQUAL_STRING(prompt, "shell>");
+     TEST_ASSERT_EQUAL_STRING("DeeShell>", prompt);
      free(prompt);
 }
 

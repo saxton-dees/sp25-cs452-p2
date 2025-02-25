@@ -63,7 +63,7 @@ If the user just presses the Enter key, then the shell displays another prompt. 
 * [fork()](https://man7.org/linux/man-pages/man2/fork.2.html)
 * [waitpid()](https://man7.org/linux/man-pages/man2/wait.2.html)
 
-#### Task 8 - Signals
+#### Task 7 - Signals
 The shell should ignore the signals listed below:
 
 c
