@@ -7,11 +7,11 @@
 char *get_prompt(const char *env) {
   const char *prompt = getenv(env);
   if (prompt == NULL) {
-      prompt = "DeeShell>";
+    prompt = "DeeShell>";
   }
   char *result = malloc(strlen(prompt) + 1);
   if (result != NULL) {
-      strcpy(result, prompt);
+    strcpy(result, prompt);
   }
   return result;
 }
@@ -27,8 +27,8 @@ char **cmd_parse(char const *line) {
   char *token;
 
   if (!tokens) {
-      fprintf(stderr, "cmd_parse: allocation error\n");
-      exit(EXIT_FAILURE);
+    fprintf(stderr, "cmd_parse: allocation error\n");
+    exit(EXIT_FAILURE);
   }
 
   token = strtok((char *)line, " \t\r\n\a");
@@ -40,8 +40,8 @@ char **cmd_parse(char const *line) {
           bufsize += 64;
           tokens = realloc(tokens, bufsize * sizeof(char*));
           if (!tokens) {
-              fprintf(stderr, "cmd_parse: allocation error\n");
-              exit(EXIT_FAILURE);
+            fprintf(stderr, "cmd_parse: allocation error\n");
+            exit(EXIT_FAILURE);
           }
       }
 
@@ -62,7 +62,7 @@ char *trim_white(char *line) {
   while (isspace((unsigned char)*line)) line++;
 
   if (*line == 0)  // All spaces?
-      return line;
+    return line;
 
   // Trim trailing space
   end = line + strlen(line) - 1;
@@ -77,14 +77,14 @@ char *trim_white(char *line) {
 bool do_builtin(struct shell *sh, char **argv) {
   (void)sh;
   if (strcmp(argv[0], "exit") == 0) {
-      printf("Goodbye!\n");
-      cmd_free(argv);
-      sh_destroy(sh);
-      exit(0);
+    printf("Goodbye!\n");
+    cmd_free(argv);
+    sh_destroy(sh);
+    exit(0);
   }
   if (strcmp(argv[0], "cd") == 0) {
-      change_dir(argv);
-      return true;
+    change_dir(argv);
+    return true;
   }
   return false;
 }
@@ -95,7 +95,7 @@ void sh_init(struct shell *sh) {
 
 void sh_destroy(struct shell *sh) {
   if (sh->prompt) {
-      free(sh->prompt);
+    free(sh->prompt);
   }
 }
 
